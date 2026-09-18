@@ -1,0 +1,14 @@
+{
+  // OxNeural documentation lint rules.
+  // Disabled rules are disabled deliberately, not because they were noisy.
+  "config": {
+    "default": true,
+    "MD013": false,  // line length: prose is written for readers, not for 80 columns
+    "MD033": false,  // inline HTML: required for the centred profile layout
+    "MD041": false,  // first line heading: README opens with a banner block
+    "MD024": { "siblings_only": true },
+    "MD029": { "style": "ordered" }
+  },
+  "globs": ["**/*.md"],
+  "ignores": ["node_modules/**", ".git/**"]
+}

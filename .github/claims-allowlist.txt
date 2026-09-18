@@ -1,0 +1,14 @@
+# Claims allowlist — oxneural-handbook
+#
+# Each path below legitimately contains prohibited marketing wording because
+# the document's subject IS that wording: it is quoted as a bad example, or
+# stated and then explicitly bounded.
+#
+# Adding a path here requires a reason. Adding one to hide a real claim
+# defeats the purpose of the check.
+
+docs/standards/readme-standard.md        # quotes "Enterprise-grade" as a prohibited adjective
+docs/standards/repository-standard.md    # quotes a bad repository description as an example
+docs/cybersecurity/soc-operations-standard.md  # states the bounded 24/7 wording that is approved for use
+docs/client-delivery/engagement-lifecycle.md   # prohibits committing to unstaffed 24/7 coverage
+templates/SOW.md                         # carries the approved, bounded 24/7 clause

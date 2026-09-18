@@ -1,0 +1,12 @@
+# Keeps the GitHub Actions used in this repository up to date.
+# Actions are the only dependency ecosystem present; nothing else is declared
+# because nothing else exists here yet.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "chore"

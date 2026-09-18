@@ -1,0 +1,67 @@
+name: Documentation quality
+
+# The handbook defines the standard the rest of OxNeural is held to.
+# It should be held to it first.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: "**/*.md"
+
+  link-check:
+    name: Link check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-retries 3
+            --accept 200,206,429
+            --exclude linkedin\.com
+            --verbose
+            '**/*.md'
+          fail: true
+
+  claims-guard:
+    name: Claims guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/check-claims.sh
+
+  structure-check:
+    name: Required documents present
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify the handbook's own required files exist
+        run: |
+          set -euo pipefail
+          required="README.md CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md LICENSE"
+          missing=0
+          for f in $required; do
+            if [ ! -f "$f" ]; then echo "::error::missing $f"; missing=1; fi
+          done
+          for d in docs/standards docs/development docs/cybersecurity templates; do
+            if [ ! -d "$d" ]; then echo "::error::missing directory $d"; missing=1; fi
+          done
+          exit $missing
