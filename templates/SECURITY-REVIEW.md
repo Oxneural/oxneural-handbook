@@ -94,6 +94,7 @@
 | GitHub Actions: SHA-pinned, minimum `permissions:` | | |
 
 ## 8. Pre-publication check
+
 *(Only when making a repository public, or publishing material from an engagement)*
 
 | Check | Result |

@@ -70,6 +70,7 @@ The following are required from the client. Delays here affect the timeline.
  it is a change request, not absorbed scope.>
 
 ## 9. Service levels
+
 *(SOC / managed security engagements only — delete if not applicable)*
 
 **Coverage:** <hours, days, timezone>
@@ -90,6 +91,7 @@ The following are required from the client. Delays here affect the timeline.
  first. Be specific — this protects both parties during an incident.>
 
 ## 10. Security testing authorisation
+
 *(Security testing engagements only — delete if not applicable)*
 
 > Selective / scope-based security testing subject to authorization, project scope, capability, timeline and resources.

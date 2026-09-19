@@ -39,9 +39,9 @@ Every outcome statement carries exactly one tag:
 Examples:
 
 > Median API response time fell from 840ms to 210ms. `[Measured]` — k6, 500 virtual users, 10-minute run, staging, 12 Aug 2026.
-
+>
 > The finance team reported month-end close taking roughly a day less. `[Client-reported]` — project review call, 3 Sep 2026.
-
+>
 > Expected to support around 50,000 records without architectural change. `[Expected]` — extrapolated from load testing at 10,000; not yet validated at scale.
 
 Never: "Improved performance by 75%." Never: "Significantly reduced manual effort."
