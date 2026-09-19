@@ -5,6 +5,12 @@
     "default": true,
     "MD013": false,  // line length: prose is written for readers, not for 80 columns
     "MD033": false,  // inline HTML: required for the centred profile layout
+    "MD036": false,  // emphasis as heading: bold labels inside the centred visual
+                     // blocks are labels, not headings — promoting them to headings
+                     // breaks the centring and pollutes the heading hierarchy
+    "MD040": false,  // fenced code language: the fenced blocks here are ASCII
+                     // architecture diagrams and shell snippets, not source in a
+                     // highlightable language — a fake language tag would be worse
     "MD041": false,  // first line heading: README opens with a banner block
     "MD024": { "siblings_only": true },
     "MD029": { "style": "ordered" }
